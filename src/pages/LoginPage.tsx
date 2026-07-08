@@ -1,4 +1,4 @@
-import { LoginForm } from "../api/auth/components/forms/loginForm";
+import { LoginForm } from "../auth/auth/components/forms/loginForm";
 import { Paper, Box, Typography } from "@mui/material";
 
 function LoginPage() {

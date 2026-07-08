@@ -1,5 +1,5 @@
 import { useLoginForm } from "../../hooks/useLoginForm";
-import { TurnstileWidget } from "../TurnstileWidget";
+import { TurnstileWidget } from "../../../../api/auth/components/TurnstileWidget";
 import { Alert, Button, TextField, Stack } from "@mui/material";
 
 export function LoginForm() {

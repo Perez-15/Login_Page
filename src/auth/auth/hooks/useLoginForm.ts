@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginSchema } from '../schemas/loginSchema';
-import { useLoginMutation } from '../authApi';
+import { useLoginMutation } from '../api/authApi';
 
 export function useLoginForm() {
   const navigate = useNavigate();
