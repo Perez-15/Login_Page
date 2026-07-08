@@ -8,7 +8,7 @@ export const loginSchema = z.object({
 
   password: z.string()
     .trim()
-    .min(6, "Password must be at least 6 characters"),
+    .min(1, "Password is required"),
 
   turnstileToken: z.string()
     .min(1, "Verification required")

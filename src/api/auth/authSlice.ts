@@ -1,7 +1,7 @@
 import type { PayloadAction} from '@reduxjs/toolkit';
-import type{ LoginResponse } from './authApi';
+import type{ LoginResponse } from '../../api/auth/authApi';
 import { createSlice} from '@reduxjs/toolkit';
-import { authApi} from './authApi';
+import { authApi} from '../../api/auth/authApi';
 
 interface AuthState {
     user: LoginResponse | null;

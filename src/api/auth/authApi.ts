@@ -1,37 +1,25 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
-export interface LoginRequest {
-  username: string;
-  password: string;
-}
-
-export interface LoginResponse {
-  id: number;
-  username: string;
-  email: string;
-  firstname: string;
-  lastname: string;
-  image: string;
-}
+import { AUTH_ENDPOINTS } from "./authEndpoints";
+import type { LoginResponse, LoginRequest } from "./types/authTypes";
 
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://dummyjson.com",
+    baseUrl: import.meta.env.VITE_DEVELOPMENT_BASE_URL,
     credentials: "include",
   }),
 
   endpoints: (builder) => ({
     login: builder.mutation<LoginResponse, LoginRequest>({
       query: (credentials) => ({
-        url: "/auth/login",
+        url: AUTH_ENDPOINTS.login,
         method: "POST",
         body: { ...credentials, expiresInMins: 30 },
       }),
     }),
 
     getMe: builder.query<LoginResponse, void>({
-      query: () => "/auth/me",
+      query: () => AUTH_ENDPOINTS.afterLogin,
     }),
   }),
 });
